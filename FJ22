@@ -1,0 +1,160 @@
+Aula 01 -18/11
+Professora Ana
+ana.losnak@caelum.com.br
+
+Controladores de versão(Versionadores de código)
+
+- Centralizado (Um único repositório) Mais simples
+
+- Distribuído Mais Complexo
+repositórios locais + o Central
+
+Faço alterações no código na "Área de Trabalho".
+
+Ideal criar versões com parte a parte das alterções de código
+
+Comandos
+touch
+echo "texto" >> arquivo
+
+Git Comandos
+git init -> criar repositório local, a pasta será meu repositório local
+git status -> ver estado (se vermelho, não adicionado, se verde foi adicionado ao repositório local)
+    lab8626@caelum113-03:~/Desktop/perfil$ git status
+    On branch master
+
+    No commits yet
+
+        //Ainda não está adicionado ao repositório local
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+        bio.txt
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+git add arquivo-> seleciona arquivo para próxima versão 
+    Modified -> já tem uma versão no repositório
+    Untracked -> não exite versão do arquivo no repositório
+git blame -> quem fez aquela linha de código
+git config --global -> fazer configurações de usuário(user.nome "Lucas Tsutsumi") e email(user.email "lucastsutsumiramos@gmail.com")
+git commit -m "explicação de alteração" -> nova versão no repositório local 
+git commit -am "explicação de alteração" -> adicionar os arquivos já modified no repositório
+git log -> ver histórico
+    HEAD -> é o local no qual estou no momento.
+git checkout hashDaVersao -> volta a versão para a qual desejo
+git clone -> clonar um repositório remoto para o local
+git push -> enviar o repositório local para um repositório remoto
+git branch nomeDaBranch -> criar nova branch(novo galho/bifurcação)
+git branch -> mostra as branchs do projeto
+git checkout nomeDaBranch -> vou para a branch
+git branch -d nomeDaBranch -> deletar a branch, não posso estar nela
+git merge nomeDaBranch -> pegar o trabalho de uma branch e jogar em outra, vou pegar a branch que estou e ir para a que estou dizendo
+git rebase nomeDaBranch -> coloco a branch em uma nova branch em linha
+git pull -> traz a master do central/remoto para o local
+
+**Não resolver conflitos na Branch master**
+Fast-Foward(Ir para Branch de uma única vez, sem chance de conflitos)
+
+https://git-scm.com/downloads -> Interfaces para Git
+
+Serviços online p/ repositórios git
+    GitHub, GitLab, BitBucket
+
+Processo de Build (Ant, Maven, Gradle) -> automatização de processos para envio para produção(Copilar / Testar / Empacotar)
+Automatização do gerenciamento de Dependências (Ivy, Maven, Gradle)
+
+pom.xml -> local para as configurações do Maven
+https://mvnrepository.com/ -> repositórios do Maven
+
+Goals Maven
+Validate: checar se a estrutura do projeto
+Compile: compilar *.java do /main
+Test: compilar e executar *.java do /test
+Package: gerar o .war/.jar
+Verify: usar ferramentas de métricas
+Install: deixar como dependência local (Exemplo o Spring)
+Deploy: deixar como dependência global (Exemplo o Spring)
+------
+Clean: limpar arquivos temporários gerados por ele
+
+Posso usar o Maven no terminal:
+    mvn goal
+    mvn plugin:goal
+
+    mvn goal1 goal2 goal3
+    mvn clean package jetty:run
+
+Servidor Web(Tomcat/Jetty)
+Plugins
+-Jetty
+    jetty:run
+-Tomcat
+    tomcat:run
+-dependency
+    resolve
+    tree
+
+Plugin do Maven para Eclipse
+
+
+Branches (Linhas Independentes de Código)
+Master(Principal, Funcional, Testado = PRODUÇÃO)
+
+DTO -> Padrão data transfer object
+-------------------------------------------------------------------------------------------------------------------------------
+Aula 2 - 19/11
+
+Anotações para o Spring/Hibernate
+@Autowired -> Criar o objeto (como se desse um new nele)
+@GetMapping("caminho") -> recebe os dados do usuário, somente metodo get, "ativado" quando colocar o caminho na url
+@PostMapping ("caminho") -> recebe os dados do usuário, somente metodo post, "ativado" quando colocar o caminho na url
+@PersistenceContex -> Cria o objeto com o conceito de persistir(salvar) algo.
+@Repository -> Quando mexe com banco de dados(dao), habilita a classe para que seja utilizada/instânciada pelo spring 
+@Transactional -> Gerencia para que o metodo quando chamado seja uma transação.
+@Entity -> o Hibernate entende a classe como uma tabela.
+@ManyToOne -> Muitos para 1
+@Id -> para informar que será a chave primaria / id único
+@GeneratedValue(strategy = GeneretionType.IDENTITY) -> o banco irá gerencia-lo, criando uma sequencia de Id's para cada um separadamente.
+@Column(nullable= false) -> não deixa salvar no banco sem esse parametro.
+@NotNull -> para metro não pode ser nulo
+@Valid -> O spring verifica se o objeto é valido ou não. / Trabalha com o "BindingResult result" pois ele guarda os erros no objeto
+
+Transação -> Operação que não pode fazer nada incompleto, caso de erro ele da um callback(volta para o estado anterior)
+Aviso o spring no Controller
+
+UML -> Modelagem de Dados/Modelos, Quantos eu quero para cada um.
+
+JPQL -> POO em SQL
+
+Irá riscar o metodo/construtor avisando que o mesmo está obsoleto ou que não deveria usa-lo    
+    /**
+    * @deprecated hibernate only
+    */ 
+
+Streams - Metodos em sequencia -> Java 8
+.noneMatch("verificação") - Do Stream, traz um Boolean
+Lambda -> escrever o minimo possivel
+
+**
+https://github.com/analosnak/fj22-ingressos/tree/lab8626
+Praticar Git
+https://github.com/fllsouto/learn-git-conflict
+https://learngitbranching.js.org/
+**
+
+Testes automatizados
+
+-Teste de unidade (um único metodo)
+-Teste de Integração (Metodos que conversam com outros serviços(por exemplo Banco de Dados))
+-Teste de Aceitação (Inclui o navegador e simula um usuário no sistema)
+
+JUnit - Jar para realizar Testes
+
+Nomear:
+-classe
+MesmoNomeDaClasseTest -> com Test no final
+-metodo
+descreverOQueEstaFazendoOMetodo
+
+
