@@ -156,5 +156,10 @@ Nomear:
 MesmoNomeDaClasseTest -> com Test no final
 -metodo
 descreverOQueEstaFazendoOMetodo
+------------------------------------------------------------------------------------------------------------------------------------
+Aula 3 -20/11
 
+Extra de como atualizar o banco para que os dados das sessoes passadas atualizem. - Extra**
+https://github.com/analosnak/fj22-ingressos/commit/fde00d4802b7fb840305f976f75cfd22752610fe
 
+Control+Shift+C -> atalho para comentar no Eclipse
