@@ -163,3 +163,6 @@ Extra de como atualizar o banco para que os dados das sessoes passadas atualizem
 https://github.com/analosnak/fj22-ingressos/commit/fde00d4802b7fb840305f976f75cfd22752610fe
 
 Control+Shift+C -> atalho para comentar no Eclipse
+
+Interface -> sem metodos, só pede metodos e suas assinaturas.
+
