@@ -119,6 +119,7 @@ Anotações para o Spring/Hibernate
 @Column(nullable= false) -> não deixa salvar no banco sem esse parametro.
 @NotNull -> para metro não pode ser nulo
 @Valid -> O spring verifica se o objeto é valido ou não. / Trabalha com o "BindingResult result" pois ele guarda os erros no objeto
+@PathVariable -> para preencher com o mesmo ID da url que esta com "{id}"
 
 Transação -> Operação que não pode fazer nada incompleto, caso de erro ele da um callback(volta para o estado anterior)
 Aviso o spring no Controller
