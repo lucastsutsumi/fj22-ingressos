@@ -30,7 +30,7 @@ public class SalaForm {
         this.salaId = sala.getId();
         this.nome = sala.getNome();
         this.lugares = new ArrayList<>(sala.getLugares());
-        this.preco = sala.getPreco();
+        this.setPreco(sala.getPreco());
     }
 
     public Integer getSalaId() {
@@ -58,10 +58,18 @@ public class SalaForm {
     }
 
     public Sala toSala() {
-        Sala sala = new Sala(this.nome,this.preco);
+        Sala sala = new Sala(this.nome, this.getPreco());
         sala.setId(this.salaId);
         sala.setLugares(new HashSet<>(this.lugares));
         return sala;
     }
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
 
 }

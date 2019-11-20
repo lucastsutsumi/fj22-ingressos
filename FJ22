@@ -120,6 +120,8 @@ Anotações para o Spring/Hibernate
 @NotNull -> para metro não pode ser nulo
 @Valid -> O spring verifica se o objeto é valido ou não. / Trabalha com o "BindingResult result" pois ele guarda os erros no objeto
 @PathVariable -> para preencher com o mesmo ID da url que esta com "{id}"
+@Component -> será uma classe gerenciada pelo spring
+@Service -> será uma classe gerenciada pelo spring, sendo que ela esta acessando um serviço.
 
 Transação -> Operação que não pode fazer nada incompleto, caso de erro ele da um callback(volta para o estado anterior)
 Aviso o spring no Controller
@@ -167,3 +169,14 @@ Control+Shift+C -> atalho para comentar no Eclipse
 
 Interface -> sem metodos, só pede metodos e suas assinaturas.
 
+Extensão para Chrome para visualizar Json
+https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=pt-BR
+
+
+Objeto = Classe
+
+printStrackTrace -> procurar essa função.
+
+Objeto do tipo "Optional"
+
+classe do Spring para auxiliar ao realizar requisições HTTP
