@@ -123,6 +123,7 @@ Anotações para o Spring/Hibernate
 @Component -> será uma classe gerenciada pelo spring
 @Service -> será uma classe gerenciada pelo spring, sendo que ela esta acessando um serviço.
 @SessionScope -> o Objeto vai durar o tempo de uma sessao.
+cascade = CascadeType.Persist -> quando fizer uma ação em um banco tambem fazer no outro
 
 Transação -> Operação que não pode fazer nada incompleto, caso de erro ele da um callback(volta para o estado anterior)
 Aviso o spring no Controller
@@ -216,3 +217,12 @@ Caso as informações não estejam completas, faço uma classe para tratar os da
 .map
 .reduce
 .orElse -> senão tiver nenhum dentro dela
+
+SQL
+chave Estrangeira -> id que leva para outra tabela
+
+
+Juan
+999222253
+999222253
+999222253
